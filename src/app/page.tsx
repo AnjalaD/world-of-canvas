@@ -49,4 +49,9 @@ const links = [
     title: "First",
     description: "Just getting started.",
   },
+  {
+    link: "/2",
+    title: "Globe",
+    description: "Simple Earth with spheres and textures.",
+  },
 ];
