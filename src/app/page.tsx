@@ -51,7 +51,12 @@ const links = [
   },
   {
     link: "/2",
-    title: "Globe",
+    title: "Globe I",
+    description: "Simple Earth with spheres and textures.",
+  },
+  {
+    link: "/3",
+    title: "Globe II",
     description: "Simple Earth with spheres and textures.",
   },
 ];
