@@ -3,9 +3,7 @@ const nextConfig = {
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
-      use: {
-        loader: "raw-loader",
-      },
+      type: "asset/source",
     });
     return config;
   },
