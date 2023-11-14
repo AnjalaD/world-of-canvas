@@ -45,32 +45,32 @@ export default function Home() {
 
 const links = [
   {
-    link: "/1",
+    link: "/exp/1",
     title: "First",
     description: "Just getting started.",
   },
   {
-    link: "/2",
+    link: "/exp/2",
     title: "Globe I",
     description: "Simple Earth with spheres and textures.",
   },
   {
-    link: "/3",
+    link: "/exp/3",
     title: "Globe II",
     description: "Earth with atmosphere using custom shaders.",
   },
   {
-    link: "/4",
+    link: "/exp/4",
     title: "Globe III",
     description: "Earth with starts in space.",
   },
   {
-    link: "/5",
+    link: "/exp/5",
     title: "Globe IV",
     description: "Pixelated Earth with custom shader.",
   },
   {
-    link: "/6",
+    link: "/exp/6",
     title: "Magic Window",
     description: "World inside the window.",
   },
