@@ -1,9 +1,9 @@
 "use client";
 
-import * as THREE from "three";
 import { useRef } from "react";
 import { Canvas, ThreeElements, useFrame, useLoader } from "@react-three/fiber";
 import { MeshPortalMaterial, OrbitControls, Stars } from "@react-three/drei";
+import { AdditiveBlending, BackSide, TextureLoader } from "three";
 
 import globeTexture from "@/assets/textures/globe-texture.jpg";
 import atmosphereVertexShader from "@/assets/shaders/atmosphere-vert.glsl";
@@ -46,7 +46,7 @@ export default function App() {
 function Globe(props: ThreeElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);
 
-  const texture = useLoader(THREE.TextureLoader, globeTexture.src);
+  const texture = useLoader(TextureLoader, globeTexture.src);
 
   useFrame(() => (meshRef.current.rotation.y += 0.001));
 
@@ -67,8 +67,8 @@ function Atmosphere(props: ThreeElements["mesh"]) {
       <shaderMaterial
         vertexShader={atmosphereVertexShader}
         fragmentShader={atmosphereFragmentShader}
-        blending={THREE.AdditiveBlending}
-        side={THREE.BackSide}
+        blending={AdditiveBlending}
+        side={BackSide}
       />
     </mesh>
   );
