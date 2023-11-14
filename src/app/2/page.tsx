@@ -22,7 +22,7 @@ function Globe(props: ThreeElements["mesh"]) {
   const [hovered, setHover] = useState(false);
 
   useFrame(
-    (state, delta) => (meshRef.current.rotation.y += delta / (hovered ? 1 : 20))
+    (state, delta) => (meshRef.current.rotation.y += delta / (hovered ? 2 : 20))
   );
 
   const texture = useLoader(TextureLoader, globeTexture.src);

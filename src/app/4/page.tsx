@@ -6,8 +6,8 @@ import { AdditiveBlending, BackSide, TextureLoader } from "three";
 import { Stars } from "@react-three/drei";
 
 import globeTexture from "@/assets/textures/globe-texture.jpg";
-import atmosphereVertexShader from "@/assets/shaders/atmosphere-vertex.glsl";
-import atmosphereFragmentShader from "@/assets/shaders/atmosphere-fragment.glsl";
+import atmosphereVertexShader from "@/assets/shaders/atmosphere-vert.glsl";
+import atmosphereFragmentShader from "@/assets/shaders/atmosphere-frag.glsl";
 
 export default function Page() {
   return (
@@ -35,7 +35,7 @@ function Globe(props: ThreeElements["mesh"]) {
   const [hovered, setHover] = useState(false);
 
   useFrame(
-    (state, delta) => (meshRef.current.rotation.y += delta / (hovered ? 1 : 20))
+    (state, delta) => (meshRef.current.rotation.y += delta / (hovered ? 2 : 20))
   );
 
   const texture = useLoader(TextureLoader, globeTexture.src);

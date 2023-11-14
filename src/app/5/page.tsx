@@ -3,8 +3,11 @@
 import { useRef, useState } from "react";
 import { Canvas, useFrame, ThreeElements, useLoader } from "@react-three/fiber";
 import { AdditiveBlending, BackSide, TextureLoader } from "three";
+import { Stars } from "@react-three/drei";
 
 import globeTexture from "@/assets/textures/globe-texture.jpg";
+import globeVertexShader from "@/assets/shaders/globe-pix-vert.glsl";
+import globeFragmentShader from "@/assets/shaders/globe-pix-frag.glsl";
 import atmosphereVertexShader from "@/assets/shaders/atmosphere-vert.glsl";
 import atmosphereFragmentShader from "@/assets/shaders/atmosphere-frag.glsl";
 
@@ -15,6 +18,15 @@ export default function Page() {
         <ambientLight />
         <Globe position={[0, 0, 0]} />
         <Atmosphere position={[0, 0, 0]} />
+        <Stars
+          radius={100}
+          depth={50}
+          count={5000}
+          factor={4}
+          saturation={0}
+          fade
+          speed={1}
+        />
       </Canvas>
     </div>
   );
@@ -38,7 +50,13 @@ function Globe(props: ThreeElements["mesh"]) {
       onPointerOut={(event) => setHover(false)}
     >
       <sphereGeometry args={[5, 50, 50]} />
-      <meshBasicMaterial map={texture} />
+      <shaderMaterial
+        vertexShader={globeVertexShader}
+        fragmentShader={globeFragmentShader}
+        uniforms={{
+          globeTexture: { value: texture },
+        }}
+      />
     </mesh>
   );
 }

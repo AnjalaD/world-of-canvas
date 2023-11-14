@@ -57,11 +57,16 @@ const links = [
   {
     link: "/3",
     title: "Globe II",
-    description: "Simple Earth with atmosphere using custom shaders.",
+    description: "Earth with atmosphere using custom shaders.",
   },
   {
     link: "/4",
     title: "Globe III",
-    description: "Simple Earth with starts.",
+    description: "Earth with starts in space.",
+  },
+  {
+    link: "/5",
+    title: "Globe IV",
+    description: "Pixelated Earth with custom shader.",
   },
 ];
