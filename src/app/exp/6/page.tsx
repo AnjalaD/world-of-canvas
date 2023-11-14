@@ -1,13 +1,25 @@
 "use client";
 
 import { useRef } from "react";
-import { Canvas, ThreeElements, useFrame, useLoader } from "@react-three/fiber";
+import {
+  Canvas,
+  Object3DNode,
+  ThreeElements,
+  extend,
+  useFrame,
+  useLoader,
+} from "@react-three/fiber";
 import { MeshPortalMaterial, OrbitControls, Stars } from "@react-three/drei";
 import { AdditiveBlending, BackSide, TextureLoader } from "three";
+import { geometry } from "maath";
 
 import globeTexture from "@/assets/textures/globe-texture.jpg";
 import atmosphereVertexShader from "@/assets/shaders/atmosphere-vert.glsl";
 import atmosphereFragmentShader from "@/assets/shaders/atmosphere-frag.glsl";
+
+extend(geometry);
+
+const gGeometry = new geometry.RoundedPlaneGeometry(12, 16, 0.5);
 
 export default function App() {
   return (
@@ -15,13 +27,11 @@ export default function App() {
       <Canvas camera={{ fov: 75, position: [0, 0, 20] }} eventPrefix="client">
         <OrbitControls enableZoom={false} enablePan={false} />
 
-        <mesh rotation={[0, -Math.PI, 0]}>
-          <planeGeometry args={[12, 16]} />
+        <mesh geometry={gGeometry} rotation={[0, -Math.PI, 0]}>
           <meshBasicMaterial color={"#121221"} />
         </mesh>
 
-        <mesh>
-          <planeGeometry args={[12, 16]} />
+        <mesh geometry={gGeometry}>
           <MeshPortalMaterial>
             <color attach="background" args={[0x000000]} />
 
