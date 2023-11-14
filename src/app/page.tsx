@@ -69,4 +69,9 @@ const links = [
     title: "Globe IV",
     description: "Pixelated Earth with custom shader.",
   },
+  {
+    link: "/6",
+    title: "Magic Window",
+    description: "World inside the window.",
+  },
 ];
