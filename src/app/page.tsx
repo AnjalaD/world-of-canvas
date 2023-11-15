@@ -72,11 +72,16 @@ const links = [
   {
     link: "/exp/6",
     title: "Magic Window",
-    description: "World inside the window.",
+    description: "World inside a window.",
   },
   {
     link: "/exp/7",
     title: "Gravity",
-    description: "Push to the moon.",
+    description: "Simple physics ex. with bouncing ball.",
+  },
+  {
+    link: "/exp/8",
+    title: "Collisions",
+    description: "Bouncing ball with collision detection.",
   },
 ];
