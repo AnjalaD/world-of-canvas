@@ -84,4 +84,9 @@ const links = [
     title: "Collisions",
     description: "Bouncing ball with collision detection.",
   },
+  {
+    link: "/exp/9",
+    title: "Shader Art I",
+    description: "Simple shader art with custom shader.",
+  },
 ];
