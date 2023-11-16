@@ -89,4 +89,14 @@ const links = [
     title: "Shader Art I",
     description: "Simple shader art with custom shader.",
   },
+  {
+    link: "/exp/10",
+    title: "Shader Art II",
+    description: "Simple shader art with custom shader.",
+  },
+  {
+    link: "/exp/11",
+    title: "Ripples",
+    description: "Simple shader art with custom shader.",
+  },
 ];
