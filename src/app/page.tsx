@@ -97,6 +97,6 @@ const links = [
   {
     link: "/exp/11",
     title: "Ripples",
-    description: "Simple shader art with custom shader.",
+    description: "Ripples in water with extended vertex shader.",
   },
 ];
