@@ -99,4 +99,9 @@ const links = [
     title: "Ripples",
     description: "Ripples in water with extended vertex shader.",
   },
+  {
+    link: "/exp/12",
+    title: "Solar System",
+    description: "Solar system with planets and moons.",
+  },
 ];
